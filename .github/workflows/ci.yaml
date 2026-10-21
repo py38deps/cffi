@@ -548,7 +548,7 @@ jobs:
         matrix_yaml: |
           include:
           - { runner: ubuntu-24.04, python-version: 3.15t-dev }
-          - { runner: macos-26, python-version: 3.15t-dev }
+          - { runner: macos-15, python-version: 3.15t-dev }
           - { runner: windows-2025, python-version: 3.15t-dev }
 
   pytest-run-parallel:
