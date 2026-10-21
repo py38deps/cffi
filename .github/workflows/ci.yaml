@@ -353,6 +353,10 @@ jobs:
           - { spec: cp315t-win32 }
 
           # arm64 windows
+          # cibuildwheel installs the pythonarm64 NuGet packages (3.9.10 /
+          # 3.10.11); CPython 3.8 has no Windows ARM64 build.
+          - { spec: cp39-win_arm64, runs_on: windows-11-arm, omit: ${{ env.skip_ci_redundant_jobs }} }
+          - { spec: cp310-win_arm64, runs_on: windows-11-arm, omit: ${{ env.skip_ci_redundant_jobs }} }
           - { spec: cp311-win_arm64, runs_on: windows-11-arm, omit: ${{ env.skip_ci_redundant_jobs }} }
           - { spec: cp312-win_arm64, runs_on: windows-11-arm, omit: ${{ env.skip_ci_redundant_jobs }} }
           - { spec: cp313-win_arm64, runs_on: windows-11-arm, omit: ${{ env.skip_ci_redundant_jobs }} }
